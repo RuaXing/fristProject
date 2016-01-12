@@ -2,21 +2,42 @@
 <%@page import="java.text.SimpleDateFormat"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isThreadSafe="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8" isThreadSafe="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE THML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>web网站开发复习一</title>
 <style type="text/css">
-li{
-padding:5px;
+li {
+	padding: 5px;
 }
 </style>
 </head>
 <body>
 
+
+	<table style="margin-top: 10px;" width="500" border="1" align="center"
+		cellpadding="0" cellspacing="0" bordercolor="#FFFFFF"
+		bordercolorlight="#FFFFFF" bordercolordark="#FFCCCC">
+		<tr>
+			<td width="29%" height="27" align="center">标题</td>
+			<td width="14%" height="27" align="center">上传人</td>
+			<td width="23%" height="27" align="center">上传时间</td>
+			<td width="6%" height="27" align="center">下载</td>
+		</tr>
+		<tr>
+			<td height="29" align="center">新歌</td>
+			<td height="29" align="center">小雨</td>
+			<td height="29" align="center">2016年1月12日</td>
+			<td height="29" align="center"><a
+				href="DownServlet?path=<%=getServletContext().getRealPath("新歌.mp3")%>">下载</a>
+			</td>
+		</tr>
+	</table>
+
+	<%-- 
 <!-- 上传文件 -->
 <form action="UploadServlet" method="post" enctype="multipart/form-data" name="form1" id="form1" onsubmit="return validate()">
     <ul>
@@ -32,9 +53,9 @@ padding:5px;
         }
         %>
 </form>
+ --%>
 
-
-<%-- <ul>
+	<%-- <ul>
 <li>定义request范围内的变量username</li>
 <c:set var="username" value="没人看见"></c:set>
 <c:out value="username的值为：${username }"></c:out>
@@ -43,8 +64,8 @@ padding:5px;
  --%>
 
 
-<!-- 例9.1 -->
-<%-- secapeXML属性为true时：
+	<!-- 例9.1 -->
+	<%-- secapeXML属性为true时：
 <c:out value="水平线标记<hr>" escapeXml="true"></c:out>
 <br>
 secapeXML属性为false时：
@@ -54,7 +75,7 @@ secapeXML属性为false时：
 
 
 
-<!-- 
+	<!-- 
 <form action="doreg.jsp" method="get" id = "form">
 <ul>
 <li>用户名：<input type="text" name = "name" size="29"></li>
@@ -63,7 +84,7 @@ secapeXML属性为false时：
 </ul>
 </form> -->
 
-<%-- <% String[] bookName = {"Java Web开发典型模块大全","Java Web开发实战宝典","Java Web开发全程实录"}; %>
+	<%-- <% String[] bookName = {"Java Web开发典型模块大全","Java Web开发实战宝典","Java Web开发全程实录"}; %>
 <table border="1" align="center">
 <tr>
 <td align="center">编号</td>
@@ -78,7 +99,7 @@ secapeXML属性为false时：
 </table>
  --%>
 
-<!-- <div>
+	<!-- <div>
     <form action="login.jsp" method="post">
         <ul>
             <li><h3>用户登录</h3></li>
@@ -96,7 +117,7 @@ secapeXML属性为false时：
 </div>
  -->
 
-<%-- <br>客户提交信息的方法：<%=request.getMethod() %>
+	<%-- <br>客户提交信息的方法：<%=request.getMethod() %>
 <br>使用的协议：<%=request.getProtocol() %>
 <br>获取发出请求字符串的客户端地址：<%=request.getRequestURI() %>
 <br>获取发出请求字符串的客户端地址：<%=request.getRequestURL() %>
@@ -109,8 +130,8 @@ secapeXML属性为false时：
 <br>获得HTTP协议定义的文件头信息User-Agent的值：<%=request.getHeader("user-agent") %>
 <br>获得HTTP协议定义的文件头信息accept-language的值：<%=request.getHeader("accept-language") %>
  --%>
- 
-<%--  <%
+
+	<%--  <%
  try{
 	 int money=100;
 	 int number=0;
@@ -121,11 +142,11 @@ secapeXML属性为false时：
  %>
 <jsp:forward page="deal.jsp"/> --%>
 
-<%-- <% response.sendRedirect("https://www.baidu.com/index.php?tn=monline_3_dg"); %> --%>
+	<%-- <% response.sendRedirect("https://www.baidu.com/index.php?tn=monline_3_dg"); %> --%>
 
-<%-- <%response.sendRedirect("login.jsp"); %> --%>
+	<%-- <%response.sendRedirect("login.jsp"); %> --%>
 
-<!-- <form action="" name="form1" method="post">
+	<!-- <form action="" name="form1" method="post">
     <p>用户名：<input name="name" type="text" id="name" style="width:120px"></p>
     <p>密&nbsp;&nbsp;&nbsp;&nbsp;码：<input name="pwd" type="password" id="pwd" style="width:120px"></p>
     <input type="submit" name="Submit" value="登录">
@@ -135,7 +156,7 @@ secapeXML属性为false时：
 
 
 
-<%-- <%@ include file="top.jsp" %><br>
+	<%-- <%@ include file="top.jsp" %><br>
 <%!
 int count = 0;
 public int getCount(){
